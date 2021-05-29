@@ -15,9 +15,9 @@ int main()
 	for(int i=0;i<n/2;i++)//0
 	{
 		if(i==x)//2>(3
-        {
-        break;
-        }
+                {
+                   break;
+                 }
 		swap(arr[i],arr[x]);
 		x--;
 	}
