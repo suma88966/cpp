@@ -15,7 +15,7 @@ int main()
 		 {
 		 cout<<"prime";
 		 break;
-	     }
+	         }
 		 else
 		 {
 		 cout<<"not prime";
