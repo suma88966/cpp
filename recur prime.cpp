@@ -1,21 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
-bool isprme(int n)
+bool isprime(int n,int i=2)
 {
-	int i=2;
-	if(i<=sqrt(n))
+	if(n<=2)
 	{
+		if(n==2)
+		return true;
+		else
+		return false;
+	}
 	if(n%i==0)
 	{
 		return false;
 	}
-	i++;
+	if(i>sqrt(n))
+	{
+	return true;
    }
-   return true;
+	return isprime(n,i+1);
 }
 int main()
 {
-	int n;
+	int n,i;
 	cin>>n;
-	cout<<isprme(n);
+	cout<<isprime(n,i=2);
 }
