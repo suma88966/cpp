@@ -1,0 +1,54 @@
+class Solution {
+  public:
+    // Function to return the count of number of elements in union of two arrays.
+    int findUnion(vector<int>& a, vector<int>& b) {
+        // code here
+       // sort(a.begin(),a.end());
+       // sort(b.begin(),b.end());
+        int n1 = a.size(), n2 = b.size(),i=0,j=0;
+        vector<int>arr;
+        while(i<n1 && j<n2)
+        {
+            if(a[i]<b[j])
+            {
+                if (arr.empty() || arr.back() != a[i]) {
+                    arr.push_back(a[i]);
+                }
+                i++;
+                
+            }
+            else if(b[j]<a[i])
+            {
+                
+                 if (arr.empty() || arr.back() != b[j]) {
+                    arr.push_back(b[j]);
+                }
+                j++;
+            }
+            else
+            {
+                if (arr.empty() || arr.back() != a[i]) {
+                    arr.push_back(a[i]);
+                }
+                i++;
+                j++;
+            }
+        }
+        while(i<n1)
+        {
+            
+           if (arr.empty() || arr.back() != a[i]) {
+                arr.push_back(a[i]);
+            }
+            i++;
+        }
+        while(j<n2)
+        {
+            if (arr.empty() || arr.back() != b[j]) {
+                arr.push_back(b[j]);
+            }
+            j++;
+        }
+        return arr.size();
+    }
+};
